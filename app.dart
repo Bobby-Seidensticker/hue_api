@@ -111,7 +111,10 @@ void main() async {
 
 
   //await rename('Hue ambiance lamp 8', 'Nursery');
-  await setAppropriateColor();
+
+  while (true) {
+    await setAppropriateColor();
+  }
 
 
 
@@ -133,7 +136,7 @@ void setAppropriateColor() async {
   final r = jsonDecode(response.body);
   final now = DateTime.now();
   final mins = now.hour * 60 + now.minute;
-  //final mins = 12*60;
+  //final mins = ((now.second / 60 * 24) * 60).floor();
 
   for (final key in r.keys) {
     if (r[key]['name'] == 'Nursery') continue;
@@ -147,6 +150,8 @@ void setAppropriateColor() async {
       print('    ${response.body}');
     }
   }
+
+  await Future.delayed(const Duration(seconds: 10));
 }
 
 void rename(String from, String to) async {
