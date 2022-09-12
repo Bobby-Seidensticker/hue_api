@@ -1,0 +1,20 @@
+https://192.168.0.3/debug/clip.html
+
+post:
+{"devicetype":"my_hue_app#bobby_lappy"}
+result:
+[
+	{
+		"success": {
+			"username": "q14kgE9c6eZ6ja35eAH3DSByiYVhhc14bRLQeYC1"
+		}
+	}
+]
+
+
+
+TODO:
+program that always runs on the pi
+get light status, map numbers to names
+hard code names to rooms so I have numbers to rooms
+see if 
